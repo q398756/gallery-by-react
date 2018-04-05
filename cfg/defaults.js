@@ -37,6 +37,10 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
       },
       {
+        test: /.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.less/,
         loader: 'style-loader!css-loader!less-loader'
       },
@@ -45,7 +49,7 @@ function getDefaultModules() {
         loader: 'style-loader!css-loader!stylus-loader'
       },
       {
-        test: /\.(png|jpg|gif|woff|woff2)$/,
+        test: /\.(png|jpg|gif|woff|woff2|jpeg)$/,
         loader: 'url-loader?limit=8192'
       },
       {

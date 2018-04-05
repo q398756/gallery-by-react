@@ -1,35 +1,18 @@
 require('normalize.css/normalize.css');
 require('styles/App.scss');
-var imageDatas = require('../data/imageDatas.json');
 
 import React from 'react';
 
-// let yeomanImage = require('../images/yeoman.png');
-
-// 自执行函数将图片名转成路径信息
-imageDatas = (function genImageURL( imageDatasArr) {
-  for ( var i = 0, j = imageDatasArr.length; i < j; i++){
-    var singleImageData = imageDatasArr[i];
-
-    singleImageData.imageURL = require('../images/' + singleImageData.fileName)
-
-    imageDatasArr[i] = singleImageData;
-  }
-
-  return imageDatasArr;
-})(imageDatas);
-
+let yeomanImage = require('../images/yeoman.png');
 
 class AppComponent extends React.Component {
   render() {
     return (
-
-      <section className="stage">
-        <section className="img-sec">
-        </section>
-
-        <nav className="controller-nav"></nav>
-      </section>
+      <div className="index">
+        <img src={yeomanImage} alt="Yeoman Generator" />
+        <span>wow</span>
+        <div className="notice">hello Please edit <code>src/components/Main.js</code> to get started!</div>
+      </div>
     );
   }
 }
